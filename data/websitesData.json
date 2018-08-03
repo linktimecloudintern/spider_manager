@@ -1,0 +1,31 @@
+{
+    "data": {
+        "title": "Sites",
+        "websites": [
+            {
+                "siteID": "1",
+                "siteURL": "www.github.com",
+                "articles": [
+                    {
+                        "pageURL":"https://www.githubArticle1",
+                        "pageTitle": "githubArticle1",
+                        "pageSize":"50kB",
+                        "updateTime":"2018-07-31"
+                    },
+                    {
+                        "pageURL":"https://www.githubArticle2",
+                        "pageTitle": "githubArticle2",
+                        "pageSize":"51kB",
+                        "updateTime":"2018-07-31"
+                    },
+                    {
+                        "pageURL":"https://www.githubArticle3",
+                        "pageTitle": "githubArticle3",
+                        "pageSize":"53kB",
+                        "updateTime":"2018-07-31"
+                    }
+                ]
+            }
+        ]
+    }
+}
