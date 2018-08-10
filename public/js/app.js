@@ -3,6 +3,7 @@ const listDiv = document.querySelector('.list');
 const listUl = listDiv.querySelector('ul');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
+const crawlButton = document.querySelector('button.Crawl');
 const siteSelected = document.querySelector('.siteSelected');
 const lis = listUl.children;
 const firstListItem = listUl.firstElementChild;

@@ -1,7 +1,9 @@
 
 @import 'https://fonts.googleapis.com/css?family=Lato:400,700';
 
-
+a {
+  color:white;
+}
 ul {
   padding-left: 0;
   list-style: none;

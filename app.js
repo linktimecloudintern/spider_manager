@@ -1,11 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-
+const logger = require('morgan');
 const app = express();
 
+// configure body parser
 app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.json());
+
 app.use(cookieParser());
+
+app.use(logger('dev')); // log requests to the console
+
 app.use('/static', express.static('public'));
 
 //View engine setup

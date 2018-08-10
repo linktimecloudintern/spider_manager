@@ -1,4 +1,4 @@
-extends layout
+extends layout.pug
 
 block main
   nav.navbar.navbar-inverse
@@ -18,13 +18,11 @@ block main
         .row.action
           .col-sm-6.siteSelected Site:
           .col-sm-3
-            button.Crawl Crawl
+            button.Crawl 
+              a.Crawl(href='/websites') Crawl
           .col-sm-3
             button.Analyse Analyse
         .row.result
-          .container-table
-            block table
-
-
-
+          block table
+            
   script(src='/static/js/app.js')

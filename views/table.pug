@@ -1,18 +1,13 @@
-block table
+extends start.pug
 
+block table
+  
   table.table.table-striped
     thead
       tr
-        th.article Article
-        th.size Size
-        th.updateTime Update Time
+        th Article
+        th Size
+        th Update Time
     tbody
-      tr
-        td.article aaaaaaaaaaaaaaaaaaaaaaaaaa
-      tr
-        td aaaaaaaaaaaaaaaaaaaaaaaaaa
-        td aaaaaaaaaaaaaaaaaaaaaaaaaa
-      tr
-        td 
-        td 
-        td
+
+  script(src='/static/js/table.js')
