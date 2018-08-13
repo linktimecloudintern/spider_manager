@@ -13,12 +13,12 @@ nvm use
 ``` bash
 # install dependencies
 npm install
-
+pip install scrapy
 ```
 
 ## Run
 
 ``` bash
-
 node app.js
+```
 

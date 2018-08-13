@@ -1,4 +1,5 @@
 const express = require('express');
+const shell = require('../utils/shell');
 
 // DATABASE SETUP
 var mongoose   = require('mongoose');
@@ -26,14 +27,24 @@ router.use(function(req, res, next) {
 });
 
 // test route to make sure everything is working (accessed at GET http://localhost:3333)
-router.get('/', function(req, res) {
-	res.render('start');	
-});
-
 router.get('/', (req, res) => {
-  res.render('start');
+
+	const name = req.cookies.username;
+  if (name) {
+    res.redirect('/');
+  } else {
+		res.render('start');
+  }
 });
 
+router.post('/', (req, res) => {
+  res.cookie('websiteName', req.body.websiteName);
+});
+
+// router.post('/goodbye', (req, res) => {
+//   res.clearCookie('username');
+//   res.redirect('/hello');
+// });
 // on routes that end in /websites
 // ----------------------------------------------------
 router.route('/websites')
@@ -44,7 +55,7 @@ router.route('/websites')
   (accessed at POST http://localhost:3333/websites)
   */
 
-	.post(async function(req, res) {
+	.post(function(req, res) {
 		
 		let website = new Website();		// create a new instance of the Website model
 		website.siteURL = req.body.siteURL;  // set the website's URL (comes from the request)
@@ -69,9 +80,19 @@ router.route('/websites')
 		});
 	});
 
+
 // on routes that end in /websites/:website_id
 // ----------------------------------------------------
 router.route('/websites/:siteID')
+
+	.post(async function(req,res) {
+		const {code, stdout, stderr} = await shell('cd ./tutorial && python begin.py');
+		// if (shell.exec('cd ./tutorial && python begin.py').code !== 0) {
+		// 	shell.echo('Error: run begin.py failed')
+		// 	shell.exit(1)
+		// }
+		res.json({ message: 'Website crawled!' });
+	})
 
 	// crawlWebSite(sessionId, userId, siteId): run the crawler for the web site asynchronously. 
 	.get(function(req, res) {
