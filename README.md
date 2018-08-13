@@ -4,6 +4,7 @@
 [Manage node version with nvm](https://github.com/creationix/nvm)
 
 ``` bash
+pip install scrapy
 nvm install stable # if needed
 nvm use
 ```
@@ -13,7 +14,6 @@ nvm use
 ``` bash
 # install dependencies
 npm install
-pip install scrapy
 ```
 
 ## Run

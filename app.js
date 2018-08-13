@@ -19,10 +19,10 @@ app.set('view engine', 'pug');
 
 //Routes
 const mainRoutes = require('./routes');
-// const websiteRoutes = require('./routes/websites');
+const websiteRoutes = require('./routes/websites');
 
 app.use(mainRoutes);
-// app.use('/websites', websiteRoutes);
+app.use('/api/websites', websiteRoutes);
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
