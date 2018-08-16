@@ -3,23 +3,23 @@
         "title": "Sites",
         "websites": [
             {
-                "siteID": "1",
+                "siteID": "_id",
                 "siteURL": "www.github.com",
                 "articles": [
                     {
-                        "pageURL":"https://www.githubArticle1",
+                        "pageURL":"https://www.githubArticle1.com",
                         "pageTitle": "githubArticle1",
                         "pageSize":"50kB",
                         "updateTime":"2018-07-31"
                     },
                     {
-                        "pageURL":"https://www.githubArticle2",
+                        "pageURL":"https://www.githubArticle2.com",
                         "pageTitle": "githubArticle2",
                         "pageSize":"51kB",
                         "updateTime":"2018-07-31"
                     },
                     {
-                        "pageURL":"https://www.githubArticle3",
+                        "pageURL":"https://www.githubArticle3.com",
                         "pageTitle": "githubArticle3",
                         "pageSize":"53kB",
                         "updateTime":"2018-07-31"

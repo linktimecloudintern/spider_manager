@@ -5,9 +5,13 @@ html(lang='en')
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     //- Bootstrap CSS
-    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css', integrity='sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B', crossorigin='anonymous')
+    link(rel='stylesheet', href='/static/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/static/stylesheets/style.css')
     title Site Analysis Manager
   body
+    script(src='/static/lib/axios.min.js') 
+    script(src='/static/lib/jquery-1.11.0.min.js')
+    script(src='/static/lib/json2html.min.js')
+    script(src='/static/lib/bootstrap.min.js')
     block main
 

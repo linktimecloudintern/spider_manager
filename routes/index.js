@@ -1,27 +1,17 @@
 const express = require('express');
+// create our router
 const router = express.Router();
 
+// middleware to use for all requests
+router.use(function(req, res, next) {
+	// do logging                 
+	console.log('Something is happening.');
+	next();
+});
+
+// test route to make sure everything is working (accessed at GET http://localhost:3333)
 router.get('/', (req, res) => {
   res.render('start');
 });
-
-// router.get('/hello', (req, res) => {
-//   const name = req.cookies.username;
-//   if (name) {
-//     res.redirect('/');
-//   } else {
-//     res.render('hello');
-//   }
-// });
-
-// router.post('/hello', (req, res) => {
-//   res.cookie('username', req.body.username);
-//   res.redirect('/');
-// });
-
-// router.post('/goodbye', (req, res) => {
-//   res.clearCookie('username');
-//   res.redirect('/hello');
-// });
 
 module.exports = router;

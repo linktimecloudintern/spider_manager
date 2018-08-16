@@ -1,7 +1,9 @@
 
 @import 'https://fonts.googleapis.com/css?family=Lato:400,700';
 
-
+a.Crawl {
+  color:white;
+}
 ul {
   padding-left: 0;
   list-style: none;
@@ -22,6 +24,9 @@ button {
 input {
   border: 1px solid #dcdcdc;
   margin-right: 1em;
+}
+td {
+  color: black;
 }
 
 /* Buttons */
@@ -56,8 +61,10 @@ li button {
   padding: .5em .65em;
 }
 .navbar {
+  overflow: hidden;
   background-color: black;
   color: white;
+  overflow: hidden;
 }
 .sidebar {
   background-color: whitesmoke;
@@ -65,6 +72,10 @@ li button {
   position: fixed;
 }
 .main{
-  position:fixed;
   height:100%;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
