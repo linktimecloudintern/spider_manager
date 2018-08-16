@@ -1,6 +1,7 @@
 extends layout.pug
 
 block main
+ 
   nav.navbar.navbar-inverse
     .container-fluid
       .navbar-header
@@ -9,20 +10,24 @@ block main
     .row.content
       .col-sm-4.sidebar
         .list
-          p(style='') My websites:
-          p
-            input.addItemInput(type='text', name='websiteName')
-            button.addItemButton Add a website
-            ul
+          h2 My websites:
+          input.addItemInput(type='text', name='site')
+          button.addItemButton Add a website
+          ul
       .col-sm-8.offset-sm-4.main.text-left
         .row.action
-          .col-sm-6.siteSelected Site:
-          .col-sm-3
-            button.Crawl 
-              a.Crawl(href='/websites') Crawl
-          .col-sm-3
+          h2.col-sm-8.siteSelected Site:
+          .col-sm-2
+            button.Crawl Crawl Again
+          .col-sm-2
             button.Analyse Analyse
         .row.result
-          block table
-            
+          table.table.table-striped.table-bordered
+            thead
+              tr
+                th Article
+                th Update Time
+            tbody
+
+        
   script(src='/static/js/app.js')

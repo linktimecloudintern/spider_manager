@@ -1,34 +1,19 @@
+// This file aims to convert the output JSON file to a readable table
 
 let tableBody = document.querySelector('tbody');
-
+let d = new Date();
+// parameter is an array of objects
 function rowCreate(article){
   let tableRow = tableBody.insertRow();
-  tableRow.insertCell().innerHTML = article.pageTitle;
-  tableRow.insertCell().innerHTML = article.pageSize;
-  tableRow.insertCell().innerHTML = article.updateTime;
+  tableRow.insertCell().innerHTML = `<a href=${article.url} > ${article.title} </a>`;
+  tableRow.insertCell().innerHTML = d;
 }
 
 function tableCreate(articles){
   articles.forEach(rowCreate);
 }
 
-tableCreate([
-  {
-      "pageURL":"https://www.githubArticle1.com",
-      "pageTitle": "githubArticle1",
-      "pageSize":"50kB",
-      "updateTime":"2018-07-31"
-  },
-  {
-      "pageURL":"https://www.githubArticle2.com",
-      "pageTitle": "githubArticle2",
-      "pageSize":"51kB",
-      "updateTime":"2018-07-31"
-  },
-  {
-      "pageURL":"https://www.githubArticle3.com",
-      "pageTitle": "githubArticle3",
-      "pageSize":"53kB",
-      "updateTime":"2018-07-31"
-  }
-]);
+axios.post('/api/websites/site/1').then(function (rsp) {
+  tableCreate(rsp.data.article);
+});
+
