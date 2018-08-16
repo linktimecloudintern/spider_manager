@@ -58,4 +58,4 @@ typings/
 .env
 
 tutorial/.idea/misc.xml
-tutorial/tutorial/__pycache__
+__pycache__
