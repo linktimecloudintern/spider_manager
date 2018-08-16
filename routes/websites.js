@@ -21,11 +21,11 @@ let Website = require('../data/db/websites');
 // create our router
 const router = express.Router();
 
-router.route('/table')
+// router.route('/table')
 
-	.get(function(req, res) {
-		res.render('table');
-	});
+// 	.get(function(req, res) {
+// 		res.render('table');
+// 	});
 	
 router.route('/')
 
@@ -59,9 +59,9 @@ router.route('/')
 		});
 	});
 
-// on routes that end in /websites/:siteID
+
 // ----------------------------------------------------
-router.route('/site/:siteID')
+router.route('/site/:url')
 
   // crawlWebSite(sessionId, userId, siteId): run the crawler for the web site asynchronously. 
 	.post(async function(req, res) {
@@ -77,7 +77,7 @@ router.route('/site/:siteID')
 	// .get(function(req, res) {
 	// 	return res.render('table');
 	// })
-	router.route('/site/:url')
+
 	// removeWebSite(sessionId, userId, siteId): remove the site identified by the siteId. 
 	.delete(async function(req, res) {
 

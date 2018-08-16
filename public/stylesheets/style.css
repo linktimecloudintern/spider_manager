@@ -61,6 +61,7 @@ li button {
   padding: .5em .65em;
 }
 .navbar {
+  overflow: hidden;
   background-color: black;
   color: white;
   overflow: hidden;
@@ -73,4 +74,8 @@ li button {
 .main{
   height:100%;
 }
-
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

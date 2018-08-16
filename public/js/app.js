@@ -68,12 +68,13 @@ listUl.addEventListener('click', (event) => {
     if (event.target.className == 'select') {
       let name = event.target.previousSibling;
       const p = document.createElement('p');
-      p,textContent=name.textContent;
+      p.textContent=name.textContent;
       siteSelected.appendChild(p);
-      axios.post(`/api/websites/site/1`)
+      axios.post(`/api/websites/site/:url`,{url:encodeURIComponent(p.textContent) })
         .then(function (rsp) {
           tableCreate(rsp.data.article);
         })
+
         .catch(function (error) {
           console.log(error);
         });
@@ -96,9 +97,9 @@ listUl.addEventListener('click', (event) => {
 });
   
 crawlButton.addEventListener('click',()=>{
-  const req = event.target.parentNode.previousSibling.children[0];
+  const req = event.target.parentNode.previousSibling.childNodes[1];
   // console.log(req);
-  axios.post(`/api/websites/site/1`)
+  axios.post(`/api/websites/site/:url`,{url:encodeURIComponent(req.textContent)})
   .then(function (rsp) {
     tableCreate(rsp.data.article);
   })
@@ -106,5 +107,17 @@ crawlButton.addEventListener('click',()=>{
     console.log(error);
   });
 }) 
+//create a sticky navbar
+window.onscroll = function() {stickyNavbar()};
 
+var navbar = document.getElementsByClassName("navbar");
+var sticky = navbar.offsetTop;
+
+function stickyNavbar() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
   
