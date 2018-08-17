@@ -28,7 +28,9 @@ input {
 td {
   color: black;
 }
-
+html{
+  font-family: sans-serif;
+}
 /* Buttons */
 button {
   color: white;
@@ -36,12 +38,33 @@ button {
   border: solid 1px;
   border-color: rgba(0, 0, 0, .1);
   cursor: pointer;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 button + button {
   margin-left: .5em;
 }
 p + button {
   background: #52bab3;
+}
+
+h2 input {
+  border: 2px solid #dcdcdc;
+  margin-right: .75em;
+  margin-left: .75em;
+  padding: .2em .2em .2em .2em;
+}
+h2 button{
+  color: white;
+  background: #508abc;
+  border: solid 1px;
+  border-color: rgba(0, 0, 0, .1);
+  cursor: pointer;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  margin-right: .75em;
+  margin-left: .75em;
+  padding: .2em 1em;
 }
 .list button + button {
   background: #768da3;
@@ -64,7 +87,6 @@ li button {
   overflow: hidden;
   background-color: black;
   color: white;
-  overflow: hidden;
 }
 .sidebar {
   background-color: whitesmoke;
@@ -78,4 +100,30 @@ li button {
   position: fixed;
   top: 0;
   width: 100%;
+}
+h2 {
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  font-size: 1.3rem;
+}
+span{
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+table{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.action{
+  padding-top: 0.75rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+.action button{
+  padding: .4em 1em;
 }

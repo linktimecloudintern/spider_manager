@@ -2,7 +2,7 @@ extends layout.pug
 
 block main
  
-  nav.navbar.navbar-inverse
+  nav.navbar.navbar-inverse.navbar-fixed-top
     .container-fluid
       .navbar-header
         h1.navbar-brand(href='#') Site Analysis Manager
@@ -11,15 +11,14 @@ block main
       .col-sm-4.sidebar
         .list
           h2 My websites:
-          input.addItemInput(type='text', name='site')
-          button.addItemButton Add a website
+            input.addItemInput(type='text', name='site' autocomplete="off")
+            button.addItemButton Add
           ul
       .col-sm-8.offset-sm-4.main.text-left
         .row.action
           h2.col-sm-8.siteSelected Site:
-          .col-sm-2
+          .col-sm-4.text-right
             button.Crawl Crawl Again
-          .col-sm-2
             button.Analyse Analyse
         .row.result
           table.table.table-striped.table-bordered
