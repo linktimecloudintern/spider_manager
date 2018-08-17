@@ -14,18 +14,12 @@ db.once('open', function() {
   console.log("DB connection alive");
 });
 // clear db when loading the website
-// db.dropDatabase();
+db.dropDatabase();
 // Website models lives here
 let Website = require('../data/db/websites');
 
 // create our router
 const router = express.Router();
-
-// router.route('/table')
-
-// 	.get(function(req, res) {
-// 		res.render('table');
-// 	});
 	
 router.route('/')
 
@@ -38,7 +32,7 @@ router.route('/')
 		Website.find(function(err, websites) {
 			if (err)
 				res.send(err);
-			// res.render('table');
+
 			res.json(websites);
 		});
 	})
@@ -70,13 +64,12 @@ router.route('/site/:url')
 			const article = require('../tutorial/items.json');
 			const resultData = { article };
 			res.send(resultData);
+			// db.websites.find({siteURL:"https://www.csdn.net/nav/cloud"}).articles=resultData.article;
+
 		} else {
 			res.send(response);
 		}		
 	})
-	// .get(function(req, res) {
-	// 	return res.render('table');
-	// })
 
 	// removeWebSite(sessionId, userId, siteId): remove the site identified by the siteId. 
 	.delete(async function(req, res) {
